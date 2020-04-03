@@ -368,11 +368,11 @@ Definition manual_grade_for_nandb : option (nat*string) := None.
 
 (** Check your implementation with the tests below. *)
 Example test_nandb1:               (nandb true false) = true.
-(* FILL IN HERE *) Admitted.
+Proof. simpl. reflexivity. Qed.
 Example test_nandb2:               (nandb false false) = true.
-(* FILL IN HERE *) Admitted.
+Proof. simpl. reflexivity. Qed.
 Example test_nandb3:               (nandb false true) = true.
-(* FILL IN HERE *) Admitted.
+Proof. simpl. reflexivity. Qed.
 (** **** Exercise: 1 star, standard (test_nandb4)  *)
 Example test_nandb4:               (nandb true true) = false.
 (* FILL IN HERE *) Admitted.
