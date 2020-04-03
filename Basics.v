@@ -345,8 +345,23 @@ From Coq Require Export String.
     You can use [negb], but please do not use [andb] when you're
     defining this function. *)
 
-Definition nandb (b1:bool) (b2:bool) : bool
-  (* REPLACE THIS LINE WITH ":= _your_definition_ ." *). Admitted.
+(**
+
+    |----|----|-------------|
+    | b1 | b2 | nandb b1 b2 |
+    |----|----|-------------|
+    | T  | T  |      F      |
+    | T  | F  |      T      |
+    | F  | T  |      T      |
+    | F  | F  |      T      |
+    |----|----|-------------|
+*)
+
+Definition nandb (b1:bool) (b2:bool) : bool :=
+  match b1 with
+  | true => negb b2
+  | false => true
+  end.
 (* Do not modify the following line: *)
 Definition manual_grade_for_nandb : option (nat*string) := None.
 (** [] *)
